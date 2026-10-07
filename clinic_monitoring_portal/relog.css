@@ -1,0 +1,270 @@
+/* ECClinic Portal — Emergency Red Theme (#bb0505) with Top Banner */
+
+:root {
+    --primary: #bb0505;
+    --primary-dark: #9a0404;
+    --primary-light: #ffe5e5;
+    --secondary: #f8d7da;
+    --accent: #d32f2f;
+    --light: #ffffff;
+    --dark: #2c2c2c;
+    --gray: #6c757d;
+    --success: #28a745;
+    --danger: #bb0505;
+    --warning: #ffc107;
+    --info: #17a2b8;
+}
+
+
+/* ✅ Updated Body: Flex column to support banner + login/register */
+
+body {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" stroke="rgba(187, 5, 5, 0.1)" stroke-width="2" x="10" y="10" width="80" height="80" rx="15" /></svg>') 0 0 repeat;
+    animation: rotate 120s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ✅ Banner at Top */
+
+.bannerContainer {
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    background: white;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    margin: 0;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bannerText {
+    max-width: 90%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+    display: inline-block;
+}
+
+
+/* ✅ Wrapper for login/register section */
+
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 15px;
+}
+
+.login-container {
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out;
+    margin: 0 15px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.clinic-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clinic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(187, 5, 5, 0.2);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header h4 {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.75rem;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.form-label i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.form-control {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(187, 5, 5, 0.25);
+    outline: none;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(187, 5, 5, 0.4);
+}
+
+.btn-register {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-register:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    border-color: var(--primary-dark);
+}
+
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background-color: rgba(187, 5, 5, 0.1);
+    color: var(--danger);
+    border-left: 4px solid var(--danger);
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success);
+    border-left: 4px solid var(--success);
+}
+
+.clinic-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.clinic-icon i {
+    font-size: 48px;
+    color: var(--primary);
+    background: var(--primary-light);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
+/* Responsive */
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 20px;
+    }
+    .bannerText {
+        max-height: 60px;
+        padding: 0 10px;
+    }
+    .bannerContainer {
+        padding: 10px 0;
+    }
+    .login-wrapper {
+        padding: 20px 15px;
+    }
+}

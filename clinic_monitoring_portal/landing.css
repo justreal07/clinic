@@ -1,0 +1,394 @@
+/* ECClinic Landing Page Styles */
+
+.bannerContainer {
+    display: none;
+}
+
+.landing-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+
+.landing-container {
+    max-width: 500px;
+    /* Reduced from 600px to match login page */
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out;
+    margin: 0 auto;
+    /* Center the container */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.role-title {
+    text-align: center;
+    color: var(--dark);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    /* Reduced from 2rem */
+    animation: slideInDown 0.6s ease-out 0.2s both;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.role-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.role-btn {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    /* Reduced from 1.5rem */
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Ensure full width */
+    box-sizing: border-box;
+}
+
+.role-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+}
+
+.role-btn:hover::before {
+    left: 100%;
+}
+
+.role-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(187, 5, 5, 0.2);
+    border-color: var(--primary);
+}
+
+.btn-icon {
+    width: 45px;
+    /* Reduced from 50px */
+    height: 45px;
+    /* Reduced from 50px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+    /* Reduced from 1.5rem */
+}
+
+.btn-text {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+    /* Reduced from 1.1rem */
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.btn-arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--primary);
+}
+
+.role-btn:hover .btn-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.role-btn:hover .btn-text {
+    color: var(--primary);
+}
+
+
+/* Student Button */
+
+.student-btn .btn-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.student-btn:hover {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+}
+
+
+/* Staff Button */
+
+.staff-btn .btn-icon {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.staff-btn:hover {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+}
+
+
+/* Admin Button */
+
+.admin-btn .btn-icon {
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+    color: white;
+}
+
+.admin-btn:hover {
+    background: linear-gradient(135deg, #fff9f5 0%, #fff0e5 100%);
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    animation: fadeIn 1s ease-out 0.4s both;
+    margin: 0;
+    /* Remove any default margins */
+}
+
+.welcome-message p {
+    margin: 0;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    /* Slightly smaller text */
+}
+
+
+/* Pulse animation for button clicks */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Center Banner for Landing Page */
+
+.bannerContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerText {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .landing-container {
+        max-width: 95%;
+        /* More flexible on tablets */
+    }
+    .role-title {
+        font-size: 1.5rem;
+    }
+    .role-btn {
+        padding: 1rem;
+    }
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    .btn-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .landing-wrapper {
+        padding: 15px 10px;
+    }
+    .landing-container {
+        max-width: 100%;
+        /* Full width on mobile */
+        margin: 0;
+    }
+    .role-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    .role-buttons-container {
+        gap: 1rem;
+    }
+    .role-btn {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .btn-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    .btn-arrow {
+        display: none;
+    }
+    .card-body {
+        padding: 20px 15px !important;
+        /* Override any other padding */
+    }
+}
+
+
+/* Ensure the card itself fits properly */
+
+.clinic-card {
+    width: 100% !important;
+    margin: 0 auto;
+}
+
+.card-body {
+    padding: 25px !important;
+    /* Consistent padding */
+}
+
+
+/* Staggered animation for buttons */
+
+.role-buttons-container a:nth-child(1) {
+    animation: slideInRight 0.6s ease-out 0.3s both;
+}
+
+.role-buttons-container a:nth-child(2) {
+    animation: slideInRight 0.6s ease-out 0.4s both;
+}
+
+.role-buttons-container a:nth-child(3) {
+    animation: slideInRight 0.6s ease-out 0.5s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* ---------------------- Moving Grid Background ---------------------- */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* behind all content */
+    pointer-events: none; /* clicks go through */
+    background-size: 40px 40px; /* grid size */
+    background-image: 
+        linear-gradient(rgba(187,5,5,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(187,5,5,0.05) 1px, transparent 1px);
+    animation: moveGrid 30s linear infinite;
+}
+
+/* Animation to move the grid diagonally */
+@keyframes moveGrid {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 800px 800px, 800px 800px; }
+}
+
+/* ---------------------- Dashboard Container ---------------------- */
+.dashboard-container {
+    position: relative;
+    z-index: 1; /* above background */
+    background: rgba(255,255,255,0.95); /* slightly transparent to see grid */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 40px auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* ---------------------- Clinic Cards ---------------------- */
+.clinic-card {
+    width: 100% !important;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 25px !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .dashboard-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .card-body {
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .card-body {
+        padding: 10px !important;
+    }
+}
